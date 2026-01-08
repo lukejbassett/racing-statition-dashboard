@@ -15,7 +15,7 @@ Myself or the application is **not affiliated, associated authorised, endorsed b
 ## Tech Stack
 
 - React / Typescript
-- Tailwind CSS / ShadCN
+- Tailwind CSS
 - Jolpica API
 - Github Pages (hosting)
 
