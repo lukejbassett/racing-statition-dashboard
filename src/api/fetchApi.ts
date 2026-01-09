@@ -1,6 +1,7 @@
 import type {
   ConstructorStandingResponse,
   DriverStandingResponse,
+  QualifyingResponse,
 } from "../types";
 
 const baseUrl = import.meta.env.VITE_API_BASE;
@@ -13,6 +14,13 @@ export function getConstructorStandings(season: number) {
     `${season}/constructorstandings.json`
   );
 }
+// forced max limit is 100 results per page
+export function getQualifyingResults(season: number, limit = 100, offset = 0) {
+  return fetchApi<QualifyingResponse>(
+    `${season}/qualifying.json?limit=${limit}&offset=${offset}`
+  );
+}
+
 export async function fetchApi<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${baseUrl}${endpoint}`);
   if (!res.ok) {

@@ -17,8 +17,7 @@ export default function DriverStandings({ season }: DriverStandingsProps) {
           <thead>
             <tr>
               <th>Driver</th>
-              <th>Constructor</th>
-              <th>Points</th>
+              <th>Poles</th>
             </tr>
           </thead>
           <tbody>
