@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { DriverStandings, ConstructorStandings } from "../components/index";
+import {
+  DriverStandings,
+  ConstructorStandings,
+  RaceWins,
+} from "../components/index";
 import SeasonDropdown from "../components/ui/SeasonDropdown";
 
 export default function Homepage() {
@@ -11,6 +15,7 @@ export default function Homepage() {
       <SeasonDropdown season={season} changeSeason={setSeason} />
       <DriverStandings season={season} />
       <ConstructorStandings season={season} />
+      <RaceWins season={season}/>
     </>
   );
 }
