@@ -20,7 +20,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    // "erasableSyntaxOnly": true, //causing "unknown compiler option" ????
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },

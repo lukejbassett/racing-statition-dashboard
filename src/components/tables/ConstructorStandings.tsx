@@ -1,7 +1,7 @@
 import { useConstructorStandings } from "../../hooks";
 
 type ConstructorStandingsProps = {
-  season: string;
+  season: number;
 };
 
 export default function ConstructorStandings({
@@ -10,7 +10,7 @@ export default function ConstructorStandings({
   const { constructors, loading, error } = useConstructorStandings(season);
 
   if (loading) return <p>Loading</p>;
-  if (error) return <p>error</p>;
+  if (error) return <p>Error loading constructor standings: {error}</p>;
 
   return (
     <>

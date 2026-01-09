@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { DriverStandings, ConstructorStandings } from "../components/index";
+import SeasonDropdown from "../components/ui/SeasonDropdown";
 
 export default function Homepage() {
-  const season = "2025";
+  const year = new Date().getFullYear();
+  const [season, setSeason] = useState<number>(year - 1);
+
   return (
     <>
+      <SeasonDropdown season={season} changeSeason={setSeason} />
       <DriverStandings season={season} />
       <ConstructorStandings season={season} />
     </>

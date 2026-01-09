@@ -1,14 +1,14 @@
 import { useDriverStandings } from "../../hooks";
 
 type DriverStandingsProps = {
-  season: string;
+  season: number;
 };
 
 export default function DriverStandings({ season }: DriverStandingsProps) {
   const { drivers, loading, error } = useDriverStandings(season);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p>Error loading driver standings: {error}</p>;
 
   return (
     <>

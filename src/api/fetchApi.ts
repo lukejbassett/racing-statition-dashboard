@@ -5,15 +5,14 @@ import type {
 
 const baseUrl = import.meta.env.VITE_API_BASE;
 
-export function getDriverStandings(season: string) {
+export function getDriverStandings(season: number) {
   return fetchApi<DriverStandingResponse>(`${season}/driverstandings.json`);
 }
-export function getConstructorStandings(season: string) {
+export function getConstructorStandings(season: number) {
   return fetchApi<ConstructorStandingResponse>(
     `${season}/constructorstandings.json`
   );
 }
-
 export async function fetchApi<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${baseUrl}${endpoint}`);
   if (!res.ok) {

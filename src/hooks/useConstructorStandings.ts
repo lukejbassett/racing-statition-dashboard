@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { type ConstructorStanding } from "../types";
 import { getConstructorStandings } from "../api/fetchApi";
 
-export default function useConstructorStandings(season: string) {
+export default function useConstructorStandings(season: number) {
   const [constructors, setConstructors] = useState<ConstructorStanding[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
