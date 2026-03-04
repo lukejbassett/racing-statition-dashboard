@@ -7,6 +7,9 @@ import { NavLink } from "react-router-dom";
 export function Navbar() {
   return (
     <ul>
+      <span>
+        <a href="/">Racing Statition</a>
+      </span>
       {[
         { to: "/drivers", icon: <IoMdPerson size={24} />, label: "Drivers" },
         { to: "/teams", icon: <IoCarSport size={24} />, label: "Teams" },
