@@ -1,5 +1,9 @@
-import type { ConstructorStanding, ConstructorTable } from "./constructor";
-import type { DriverStanding, DriverTable } from "./driver";
+import type {
+  Constructor,
+  ConstructorStanding,
+  ConstructorTable,
+} from "./constructor";
+import type { Driver, DriverStanding, DriverTable } from "./driver";
 import type { RaceTable } from "./race";
 
 export interface MRData {
@@ -10,18 +14,26 @@ export interface MRData {
   offset: string;
   total: string;
   RaceTable: RaceTable;
-  StandingsTable: StandingsTable;
   DriverTable: DriverTable;
   ConstructorTable: ConstructorTable;
 }
-export interface StandingsTable {
-  season: string;
-  round: string;
-  StandingsLists: StandingsList[];
-}
-export interface StandingsList {
-  season: string;
-  round: string;
-  ConstructorStandings?: ConstructorStanding[];
-  DriverStandings?: DriverStanding[];
+export interface ApiResponse {
+  MRData: {
+    ConstructorTable: {
+      Constructors: Constructor[];
+    };
+    DriverTable: {
+      Drivers: Driver[];
+    };
+    StandingsTable: {
+      season: string;
+      round: string;
+      StandingsLists: {
+        season: string;
+        round: string;
+        ConstructorStandings: ConstructorStanding[];
+        DriverStandings: DriverStanding[];
+      }[];
+    };
+  };
 }
