@@ -4,7 +4,7 @@ _This Application is a Formula 1 statistics dashboard built using the Jolpica AP
 
 ## Overview
 
-Race Statition is a personal, non-commercial project created to explore data visualisation, API integratiosn and modern web development techniques.
+Race Statition is a personal, non-commercial project created to explore data visualisation, API integrations and modern web development techniques.
 This app displays Formula 1 Driver, Constructor and Race statistics using the publicly available **Jolpica API**.
 
 This project is intended **for educational and portfolio purposes only**.
@@ -14,7 +14,8 @@ Myself or the application is **not affiliated, associated authorised, endorsed b
 
 ## Tech Stack
 
-- React / Typescript
+- React
+- Typescript
 - Tailwind CSS
 - Jolpica API
 - Github Pages (hosting)
@@ -31,7 +32,7 @@ No comercial activity, monetisation or sponsorship is associated with this appli
 > This website and code repository are unofficial and are not associated in any way with the Formula 1 companies.
 > F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of **Formula One Licensing B.V.**
 
-All data used is sourced from the **Jolpica API**, providing publicly accessable motorsport data independent of Formula 1's proprietary feeds.
+All data used in this application is sourced from the **Jolpica API**, providing publicly accessable motorsport data independent of Formula 1's proprietary feeds.
 
 ---
 
