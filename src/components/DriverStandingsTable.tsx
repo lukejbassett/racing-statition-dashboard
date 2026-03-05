@@ -29,31 +29,25 @@ export function DriverStandingsTable() {
   if (loading) return <p>Loading driver standings...</p>;
 
   return (
-    <>
-      <div>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Driver</th>
-                <th>Constructor</th>
-                <th>Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {driverStandingsTable?.map((standings) => (
-                <tr key={standings.position}>
-                  <td>
-                    {standings.Driver.givenName} {standings.Driver.familyName}
-                  </td>
-                  <td>{standings.Constructors[0].name}</td>
-                  <td>{standings.points}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
+    <table>
+      <thead>
+        <tr>
+          <th>Driver</th>
+          <th>Constructor</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {driverStandingsTable?.map((standings) => (
+          <tr key={standings.position}>
+            <td>
+              {standings.Driver.givenName} {standings.Driver.familyName}
+            </td>
+            <td>{standings.Constructors[0].name}</td>
+            <td>{standings.points}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }

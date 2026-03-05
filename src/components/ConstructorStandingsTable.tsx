@@ -29,27 +29,21 @@ export function ConstructorStandingsTable() {
   if (loading) return <p>Loading constructor standings...</p>;
 
   return (
-    <>
-      <div>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Constructor</th>
-                <th>Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {constructorStandingsTable?.map((standings) => (
-                <tr key={standings.position}>
-                  <td>{standings.Constructor.name}</td>
-                  <td>{standings.points}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
+    <table>
+      <thead>
+        <tr>
+          <th>Constructor</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {constructorStandingsTable?.map((standings) => (
+          <tr key={standings.position}>
+            <td>{standings.Constructor.name}</td>
+            <td>{standings.points}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }

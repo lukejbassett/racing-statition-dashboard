@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Homepage, Games, Drivers, Teams, About } from "./pages";
+import { Homepage, Games, Drivers, Teams, About, Circuits } from "./pages";
 import { Navbar } from "./components";
 
 export function App() {
@@ -11,6 +11,7 @@ export function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/drivers" element={<Drivers />}></Route>
           <Route path="/teams" element={<Teams />}></Route>
+          <Route path="/circuits" element={<Circuits />}></Route>
           <Route path="/games" element={<Games />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>

@@ -1,5 +1,6 @@
 import type {
   ApiResponse,
+  Circuit,
   Constructor,
   ConstructorStanding,
   Driver,
@@ -40,4 +41,10 @@ export async function getConstructorStandings(
     response.MRData.StandingsTable.StandingsLists?.[0]?.ConstructorStandings ??
     [];
   return constructorStandingsResponse;
+}
+
+export async function getCircuits(season: string): Promise<Circuit[]> {
+  const response = await fetchApi<ApiResponse>(`${season}/circuits.json`);
+  const circuitDataResponse = response.MRData.CircuitTable.Circuits ?? [];
+  return circuitDataResponse;
 }

@@ -1,6 +1,4 @@
-import type { Circuit } from "./circuit";
-import type { Constructor } from "./constructor";
-import type { Driver } from "./driver";
+import type { Circuit, Constructor, Driver } from "./index";
 
 export interface Race {
   season: string;

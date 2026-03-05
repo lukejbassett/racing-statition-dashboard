@@ -1,4 +1,4 @@
-import type { Constructor } from "./constructor";
+import type { Constructor } from "./index";
 
 export interface Driver {
   driverId: string;
@@ -9,6 +9,7 @@ export interface Driver {
   familyName: string;
   dateOfBirth: string;
   nationality: string;
+  Constructor: Constructor;
 }
 export interface DriverStanding {
   position: string;
