@@ -1,6 +1,3 @@
-export interface CircuitTable {
-  Circuits: Circuit[];
-}
 export interface Circuit {
   circuitId: string;
   url?: string;

@@ -2,10 +2,6 @@ import type { Circuit } from "./circuit";
 import type { Constructor } from "./constructor";
 import type { Driver } from "./driver";
 
-export interface RaceTable {
-  season: string;
-  Races: Race[];
-}
 export interface Race {
   season: string;
   round: string;

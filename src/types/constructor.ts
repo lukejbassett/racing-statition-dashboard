@@ -1,7 +1,3 @@
-export interface ConstructorTable {
-  season: string;
-  Constructors: Constructor[];
-}
 export interface Constructor {
   constructorId: string;
   url?: string;
