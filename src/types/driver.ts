@@ -19,3 +19,13 @@ export interface DriverStanding {
   Driver: Driver;
   Constructors: Constructor[];
 }
+export interface DriverWins {
+  driverId: string;
+  name: string;
+  wins: number;
+}
+export interface DriverPoles {
+  driverId: string;
+  name: string;
+  poles: number;
+}

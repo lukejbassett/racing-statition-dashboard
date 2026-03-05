@@ -1,4 +1,8 @@
-import { ConstructorStandingsTable, DriverStandingsTable } from "../components";
+import {
+  ConstructorStandingsTable,
+  DriverStandingsTable,
+  DriverPolesTable,
+} from "../components";
 
 export function Homepage() {
   return (
@@ -6,6 +10,7 @@ export function Homepage() {
       <h1>Homepage</h1>
       <DriverStandingsTable />
       <ConstructorStandingsTable />
+      <DriverPolesTable />
     </>
   );
 }
