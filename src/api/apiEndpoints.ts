@@ -1,6 +1,7 @@
 import type {
   ApiResponse,
   Constructor,
+  ConstructorStanding,
   Driver,
   DriverStanding,
 } from "../types";
@@ -14,7 +15,7 @@ export async function getDriverData(season: string): Promise<Driver[]> {
 export async function getConstructorData(
   season: string,
 ): Promise<Constructor[]> {
-  const response = await fetchApi<ApiResponse>(`${season}/drivers.json`);
+  const response = await fetchApi<ApiResponse>(`${season}/constructors.json`);
   const constructorDataResponse = response.MRData.ConstructorTable.Constructors;
   return constructorDataResponse;
 }
@@ -27,4 +28,16 @@ export async function getDriverStandings(
   const driverStandingsResponse =
     response.MRData.StandingsTable.StandingsLists?.[0]?.DriverStandings ?? [];
   return driverStandingsResponse;
+}
+
+export async function getConstructorStandings(
+  season: string,
+): Promise<ConstructorStanding[]> {
+  const response = await fetchApi<ApiResponse>(
+    `${season}/constructorstandings.json`,
+  );
+  const constructorStandingsResponse =
+    response.MRData.StandingsTable.StandingsLists?.[0]?.ConstructorStandings ??
+    [];
+  return constructorStandingsResponse;
 }
