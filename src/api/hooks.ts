@@ -6,5 +6,7 @@ export function useSeasonData(season: string) {
     queryKey: ["season", season],
     queryFn: () => getSeasonData(season),
     staleTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
 }
