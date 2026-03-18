@@ -8,5 +8,8 @@ export function useConstructorStandings(season: string) {
     queryFn: () => getConstructorStandings(season),
     enabled: !!season,
     staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    refetchOnMount: false,
   });
 }

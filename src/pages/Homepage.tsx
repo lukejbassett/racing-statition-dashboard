@@ -1,10 +1,13 @@
 import { ConstructorStandings, DriverStandings } from "../features";
 
-export function Homepage() {
+type Props = {
+  season: string;
+};
+export function Homepage({ season }: Props) {
   return (
     <>
-      <DriverStandings />
-      <ConstructorStandings />
+      <DriverStandings season={season} />
+      <ConstructorStandings season={season} />
     </>
   );
 }

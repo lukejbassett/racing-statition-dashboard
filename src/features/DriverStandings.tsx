@@ -1,8 +1,12 @@
 import { useDriverStandings } from "../hooks/useDriverStandings";
 
-export function DriverStandings() {
+type Props = {
+  season: string;
+};
+
+export function DriverStandings({ season }: Props) {
   // custom use hook
-  const { data, isLoading, error } = useDriverStandings("2025");
+  const { data, isLoading, error } = useDriverStandings(season);
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (

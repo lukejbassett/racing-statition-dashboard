@@ -1,7 +1,11 @@
 import { useConstructorStandings } from "../hooks/useConstructorStandings";
 
-export function ConstructorStandings() {
-  const { data, isLoading, error } = useConstructorStandings("2025");
+type Props = {
+  season: string;
+};
+
+export function ConstructorStandings({ season }: Props) {
+  const { data, isLoading, error } = useConstructorStandings(season);
   if (isLoading) return <p>loading...</p>;
   if (error) return <p>error</p>;
   return (
