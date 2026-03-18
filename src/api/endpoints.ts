@@ -1,4 +1,9 @@
-import type { driverStandingsResponse, DriverStandings } from "../types";
+import type {
+  driverStandingsResponse,
+  DriverStandings,
+  ConstructorStandings,
+  constructorStandingsResponse,
+} from "../types";
 import { fetchApi } from "./fetchApi";
 
 export async function getDriverStandings(
@@ -14,4 +19,15 @@ export async function getDriverStandings(
   const driverStandingsData =
     response.MRData.StandingsTable.StandingsLists[0].DriverStandings ?? [];
   return driverStandingsData;
+}
+
+export async function getConstructorStandings(
+  season: string,
+): Promise<ConstructorStandings[]> {
+  const response = await fetchApi<constructorStandingsResponse>(
+    `${season}/constructorstandings.json`,
+  );
+  const constructorStandingsData =
+    response.MRData.StandingsTable.StandingsLists[0].ConstructorStandings ?? [];
+  return constructorStandingsData;
 }

@@ -6,26 +6,17 @@ export function DriverStandings() {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
-    <>
-      <table>
-        <thead>
-          <tr>
-            <th>Position</th>
-            <th>Driver</th>
-            <th>Points</th>
+    <table>
+      <tbody>
+        {data?.map((s) => (
+          <tr key={s.Driver.driverId}>
+            <td>
+              {s.Driver.givenName} {s.Driver.familyName}
+            </td>
+            <td>{s.points}</td>
           </tr>
-        </thead>
-        <tbody>
-          {data?.map((s) => (
-            <tr key={s.Driver.driverId}>
-              <td>
-                {s.Driver.givenName} {s.Driver.familyName}
-              </td>
-              <td>{s.points}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
+        ))}
+      </tbody>
+    </table>
   );
 }
