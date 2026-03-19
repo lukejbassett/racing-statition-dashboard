@@ -9,3 +9,11 @@ export interface Circuit {
     country: string;
   };
 }
+
+export interface CircuitResponse {
+  MRData: {
+    CircuitTable: {
+      Circuits: Circuit[];
+    };
+  };
+}

@@ -1,1 +1,2 @@
-export {SeasonDropdown} from "./SeasonDropdown"
+export { SeasonDropdown } from "./SeasonDropdown";
+export { Navbar } from "./Navbar";

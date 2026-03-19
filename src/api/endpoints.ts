@@ -3,6 +3,8 @@ import type {
   DriverStandings,
   ConstructorStandings,
   constructorStandingsResponse,
+  Circuit,
+  CircuitResponse,
 } from "../types";
 import { fetchApi } from "./fetchApi";
 
@@ -30,4 +32,10 @@ export async function getConstructorStandings(
   const constructorStandingsData =
     response.MRData.StandingsTable.StandingsLists[0].ConstructorStandings ?? [];
   return constructorStandingsData;
+}
+
+export async function getCircuits(season: string): Promise<Circuit[]> {
+  const response = await fetchApi<CircuitResponse>(`${season}/circuits.json`);
+  const circuitData = response.MRData.CircuitTable.Circuits ?? [];
+  return circuitData;
 }
