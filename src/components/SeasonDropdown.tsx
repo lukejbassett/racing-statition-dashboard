@@ -15,7 +15,11 @@ export function SeasonDropdown({ season, changeSeason }: SeasonDropdownProps) {
     (_, i) => current - i,
   );
   return (
-    <select value={season} onChange={(e) => changeSeason(e.target.value)}>
+    <select
+      name="season"
+      value={season}
+      onChange={(e) => changeSeason(e.target.value)}
+    >
       {years.map((y) => (
         <option key={y} value={y}>
           {y}
