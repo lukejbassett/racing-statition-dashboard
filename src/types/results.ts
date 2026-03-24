@@ -25,7 +25,7 @@ export interface Results {
   };
 }
 
-export interface resultsResponse {
+export interface ResultsResponse {
   MRData: {
     RaceTable: {
       Races: Race[];

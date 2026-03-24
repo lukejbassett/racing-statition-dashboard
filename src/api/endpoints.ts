@@ -1,10 +1,14 @@
-import type {
-  driverStandingsResponse,
-  DriverStandings,
-  ConstructorStandings,
-  constructorStandingsResponse,
-  Circuit,
-  CircuitResponse,
+import {
+  type driverStandingsResponse,
+  type DriverStandings,
+  type ConstructorStandings,
+  type constructorStandingsResponse,
+  type Circuit,
+  type CircuitResponse,
+  type Race,
+  type RaceResponse,
+  type Results,
+  type ResultsResponse,
 } from "../types";
 import { fetchApi } from "./fetchApi";
 
@@ -38,4 +42,21 @@ export async function getCircuits(season: string): Promise<Circuit[]> {
   const response = await fetchApi<CircuitResponse>(`${season}/circuits.json`);
   const circuitData = response.MRData.CircuitTable.Circuits ?? [];
   return circuitData;
+}
+
+export async function getRaces(season: string): Promise<Race[]> {
+  const response = await fetchApi<RaceResponse>(`${season}/races`);
+  const raceData = response.MRData.RaceTable.Races ?? [];
+  return raceData;
+}
+
+export async function getResults(
+  season: string,
+  round: string,
+): Promise<Results[]> {
+  const response = await fetchApi<ResultsResponse>(
+    `${season}/${round}/results.json`,
+  );
+  const resultData = response.MRData.RaceTable.Races[0].Results ?? [];
+  return resultData;
 }
