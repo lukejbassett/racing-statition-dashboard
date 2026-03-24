@@ -1,22 +1,40 @@
-import { useRaces } from "../hooks/useRaces";
+import { useEffect, useState } from "react";
+import type { DriverWins } from "../types/utils";
+import { calculateDriverWins } from "../utils/wins";
 
-type Props = {
+type DriverWinsProps = {
   season: string;
 };
 
-export function WinsTable({ season }: Props) {
-  const { data, isLoading, error } = useRaces(season);
-  if (isLoading) return <p>loading...</p>;
-  if (error) return <p>error</p>;
+export function WinsTable({ season }: DriverWinsProps) {
+  const [driverWins, setDriverWins] = useState<DriverWins[] | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadWins() {
+      setLoading(true);
+      const wins = await calculateDriverWins(season);
+      setDriverWins(wins);
+      setLoading(false);
+    }
+    loadWins();
+  }, [season]);
+
+  if (loading) return <p>Loading driver wins...</p>;
+
   return (
     <table>
+      <thead>
+        <tr>
+          <th>Driver</th>
+          <th>Wins</th>
+        </tr>
+      </thead>
       <tbody>
-        {data?.map((c) => (
-          <tr key={c.round}>
-            <td>{c.date}</td>
-            <td>{c.raceName}</td>
-            <td>{c.round}</td>
-            <td>{c.season}</td>
+        {driverWins?.map((driver) => (
+          <tr key={driver.driverId}>
+            <td>{driver.name}</td>
+            <td>{driver.wins}</td>
           </tr>
         ))}
       </tbody>

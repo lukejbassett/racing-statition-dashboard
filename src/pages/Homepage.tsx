@@ -3,6 +3,7 @@ import {
   CircuitsTable,
   ConstructorStandings,
   DriverStandings,
+  WinsTable,
 } from "../features";
 
 type Props = {
@@ -15,6 +16,7 @@ export function Homepage({ season }: Props) {
       <ConstructorStandings season={season} />
       <CircuitsTable season={season} />
       <CircuitResults season={season} round="1" />
+      <WinsTable season={season} />
     </>
   );
 }
